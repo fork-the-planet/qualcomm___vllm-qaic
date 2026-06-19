@@ -6,11 +6,9 @@
 - [ ] Review the workflows in `.github/workflows`, updating as needed. See https://docs.github.com/en/actions for information on what these files do and how they work.
 - [ ] Review and update the suggested Issue and PR templates as needed in `.github/ISSUE_TEMPLATE` and `.github/PULL_REQUEST_TEMPLATE`
 
-# Project Name
+# vllm-qaic
 
-*\<update with your project name and a short description\>*
-
-Project that does ... implemented in ... runs on Qualcomm® *\<processor\>*
+This project implements the "qaic" backend for the vllm project using the plugin interface. The qaic backend enabled vllm to utilize Cloud AI hardware accelerators.
 
 ## Branches
 
@@ -30,18 +28,15 @@ Describe how to use the project.
 
 ## Development
 
-How to develop new features/fixes for the software. Maybe different than "usage". Also provide details on how to contribute via a [CONTRIBUTING.md file](CONTRIBUTING.md).
+PLease refer to [CONTRIBUTING](CONTRIBUTING.md) on how to submit changes.
 
 ## Getting in Contact
 
-How to contact maintainers. E.g. GitHub Issues, GitHub Discussions could be indicated for many cases. However a mail list or list of Maintainer e-mails could be shared for other types of discussions. E.g.
+Please report an issue or open a discussion as appropiate for your usecase.
 
 * [Report an Issue on GitHub](../../issues)
 * [Open a Discussion on GitHub](../../discussions)
-* [E-mail us](mailto:REPLACE-ME@qti.qualcomm.com) for general questions
 
 ## License
 
-*\<update with your project name and license\>*
-
-*\<REPLACE-ME\>* is licensed under the [BSD-3-clause License](https://spdx.org/licenses/BSD-3-Clause.html). See [LICENSE.txt](LICENSE.txt) for the full license text.
+vllm-qaic is licensed under the [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html). See [LICENSE.txt](LICENSE.txt) for the full license text.

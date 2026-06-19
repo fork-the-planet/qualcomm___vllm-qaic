@@ -1,4 +1,4 @@
-# Contributing to <REPLACE-ME>
+# Contributing to vllm-qaic
 
 Hi there!
 We’re thrilled that you’d like to contribute to this project.
@@ -11,10 +11,10 @@ In general, contributors should develop on branches based off of `main` and pull
 ## Submitting a pull request
 
 1. Please read our [code of conduct](CODE-OF-CONDUCT.md) and [license](LICENSE.txt).
-1. [Fork](https://github.com/qualcomm/<REPLACE-ME>/fork) and clone the repository.
+1. [Fork](https://github.com/qualcomm/vllm-qaic/fork) and clone the repository.
 
     ```bash
-    git clone https://github.com/<username>/<REPLACE-ME>.git
+    git clone https://github.com/<username>/vllm-qaic.git
     ```
 
 1. Create a new branch based on `main`:
@@ -26,7 +26,7 @@ In general, contributors should develop on branches based off of `main` and pull
 1. Create an upstream `remote` to make it easier to keep your branches up-to-date:
 
     ```bash
-    git remote add upstream https://github.com/qualcomm/<REPLACE-ME>.git
+    git remote add upstream https://github.com/qualcomm/vllm-qaic.git
     ```
 
 1. Make your changes, add tests, and make sure the tests still pass.
