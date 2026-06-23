@@ -1,0 +1,9 @@
+# ------------------------------------------------------------------
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+# ------------------------------------------------------------------
+
+# PYT mode runtime deps
+# torch_qaic is installed separately (local wheel from /opt/qti-aic/integrations/torch_qaic/)
+# transformers version is managed by torch_qaic/vllm transitively;
+# pin TRANSFORMERS_VERSION_PYT in utility.sh only if a conflict arises
