@@ -1,0 +1,148 @@
+site_name: vLLM-qaic plugin for Qualcomm Cloud AI Accelerators
+site_description: Run vLLM on Qualcomm Cloud AI 100 accelerators
+site_author: Qualcomm Innovation Center
+site_url: https://quic.github.io/vllm-qaic/
+repo_url: https://github.com/qualcomm/vllm-qaic
+repo_name: vllm-qaic
+edit_uri: edit/main/qaic_docs/docs/
+docs_dir: docs
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep purple
+      toggle:
+        icon: material/brightness-2
+        name: Switch to system preference
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.path
+    - navigation.footer
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - md_in_html
+  - def_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: docs
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys
+  - pymdownx.mark
+  - toc:
+      permalink: true
+  - tables
+
+copyright: Copyright &copy; 2026, Qualcomm.
+
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/qualcomm/vllm-qaic
+    - icon: fontawesome/solid/house
+      link: https://www.qualcomm.com/products/technology/processors/cloud-artificial-intelligence
+      name: Qualcomm Cloud AI Home
+    - icon: fontawesome/solid/download
+      link: https://www.qualcomm.com/products/technology/processors/cloud-artificial-intelligence/cloud-ai-100#Software
+      name: Qualcomm Cloud AI SDK Download
+    - icon: fontawesome/solid/book-open
+      link: https://quic.github.io/cloud-ai-sdk-pages/
+      name: User Guide
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - getting_started/index.md
+      - Quick Start: getting_started/quickstart.md
+      - Installation:
+          - getting_started/installation/index.md
+          - Prerequisites: getting_started/installation/prerequisites.md
+          - AOT Mode: getting_started/installation/aot_mode.md
+          - PYT Mode: getting_started/installation/pyt_mode.md
+          - Verification: getting_started/installation/verification.md
+      - FAQ: getting_started/faq.md
+  - User Guide:
+      - user_guide/index.md
+      - Support Matrix: user_guide/features/index.md
+      - Supported Models:
+          - AOT Models: user_guide/models/supported_models_aot.md
+          - Eager Models: user_guide/models/supported_models_eager.md
+      - Serving:
+          - Online Serving: user_guide/serving/online_serving.md
+          - Offline Inference: user_guide/serving/offline_inference.md
+      - Features:
+          - Speculative Decoding: user_guide/features/speculative_decoding.md
+          - Quantization: user_guide/features/quantization.md
+          - Multimodal: user_guide/features/multimodal.md
+          - Disaggregated Serving: user_guide/features/disaggregated_serving.md
+          - LoRA: user_guide/features/lora.md
+          - Encoder-Decoder: user_guide/features/encoder_decoder.md
+          - Embedding: user_guide/features/embedding.md
+          - CCL: user_guide/features/ccl.md
+      - Configuration:
+          - Engine Arguments: user_guide/configuration/engine_args.md
+          - Environment Variables: user_guide/configuration/environment_variables.md
+          - Device Management: user_guide/configuration/device_management.md
+  - Developer Guide:
+      - developer_guide/index.md
+      - Architecture: developer_guide/architecture.md
+      - Profiling: developer_guide/profiling.md
+      - Contributing: developer_guide/contributing.md
+  - Community:
+      - Release Notes: community/release_notes.md
+      - Roadmap: community/roadmap.md

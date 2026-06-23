@@ -1,0 +1,11 @@
+# ------------------------------------------------------------------
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+# ------------------------------------------------------------------
+
+# AOT mode runtime deps
+# qefficient is installed separately by scripts/install.sh (step 1)
+# and must not be listed here to avoid torch version conflicts:
+#   qefficient requires torch==2.7.0+cpu
+#   vllm==0.15.0 requires torch==2.9.1
+# See setup.py comment for the known limitation.

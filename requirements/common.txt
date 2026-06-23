@@ -1,0 +1,10 @@
+# ------------------------------------------------------------------
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+# ------------------------------------------------------------------
+
+numba
+timm==1.0.14
+soundfile==0.13.1
+librosa==0.10.2
+qwen-vl-utils==0.0.8

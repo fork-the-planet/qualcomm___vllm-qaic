@@ -1,0 +1,117 @@
+[build-system]
+requires = [
+    "setuptools>=77.0.3,<80.0.0",
+    "setuptools-scm>=8.0",
+    "wheel",
+]
+
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vllm-qaic"
+description = "QAIC plugin package for vLLM"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "Qualcomm Data Center, LLM Serving Team" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Development Status :: 5 - Development/Unstable",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Operating System :: Linux",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence for Inference Accelerator",
+]
+requires-python = ">=3.10,<3.13"
+dynamic = [ "version", "dependencies", "optional-dependencies", "entry-points"]
+
+#[project.urls]
+#Homepage="https://github.com/vllm-project/vllm"
+#Documentation="https://docs.vllm.ai/en/latest/"
+#Slack="https://slack.vllm.ai/"
+
+[tool.setuptools_scm]
+# no extra settings needed, presence enables setuptools-scm
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vllm_qaic*"]
+namespaces = false  # to disable scanning PEP 420 namespaces (true by default)
+
+[tool.yapfignore]
+ignore_patterns = [
+    "build/**",
+    "examples/**",
+]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    # "I",
+    # flake8-logging-format
+    "G",
+]
+ignore = [
+    # star imports
+    "F405", "F403",
+    # lambda expression assignment
+    "E731",
+    # Loop control variable not used within loop body
+    "B007",
+    # f-string format
+    "UP032",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Enforce G004 (no f-strings in logging) 
+"test/*" = ["G004"]
+"setup.py" = ["G004"]
+
+[tool.isort]
+skip_glob = [
+    "examples/*",
+]
+use_parentheses = true
+skip_gitignore = true
+
+[tool.pymarkdown]
+plugins.md013.enabled = false # line-length
+plugins.md004.style = "sublist" # ul-style
+plugins.md041.enabled = false # first-line-h1
+plugins.md007.indent = 4 # ul-indent
+plugins.md007.start_indented = true # ul-indent
+plugins.md033.enabled = false # inline-html
+plugins.md046.enabled = false # code-block-style
+plugins.md024.allow_different_nesting = true # no-duplicate-headers
+
+[tool.mypy]
+ignore_missing_imports = true
+explicit_package_bases = true
+check_untyped_defs = true
+follow_imports = "silent"
+
+[tool.uv]
+## Never install torch, so that no dependencies can override it.
+## This requires that torch is installed separately in the target environment.
+override-dependencies = [
+    "torch; sys_platform == 'never'",
+    "torchaudio; sys_platform == 'never'",
+    "torchvision; sys_platform == 'never'",
+]
+
+[tool.uv.sources]
+vllm = { git = "https://github.com/vllm-project/vllm", rev = "v0.15.0" }
